@@ -19,6 +19,10 @@ import { LearnNgif } from './learn.ngif/learnngif.component';
 import { LearnngswitchcaseComponent } from './learnngswitchcase/learnngswitchcase.component';
 import { LearnngforComponent } from './learnngfor/learnngfor.component';
 import { LearnngstyleComponent } from './learnngstyle/learnngstyle.component';
+import { LearntraversalComponent } from './learntraversal/learntraversal.component';
+import { InputFormatDirective } from './input-format.directive';
+import { LearncustomdirectiveComponent } from './learncustomdirective/learncustomdirective.component';
+import { ZippyComponent } from './zippy/zippy.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,11 @@ import { LearnngstyleComponent } from './learnngstyle/learnngstyle.component';
     LearnNgif,
     LearnngswitchcaseComponent,
     LearnngforComponent,
-    LearnngstyleComponent
+    LearnngstyleComponent,
+    LearntraversalComponent,
+    InputFormatDirective,
+    LearncustomdirectiveComponent,
+    ZippyComponent
   ],
   imports: [
     BrowserModule,
