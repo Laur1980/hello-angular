@@ -15,6 +15,10 @@ import { FormatPipe } from './format.pipe';
 import { TextToBeFormatedComponent } from './text-to-be-formated/text-to-be-formated.component';
 import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './like/like.component';
+import { LearnNgif } from './learn.ngif/learnngif.component';
+import { LearnngswitchcaseComponent } from './learnngswitchcase/learnngswitchcase.component';
+import { LearnngforComponent } from './learnngfor/learnngfor.component';
+import { LearnngstyleComponent } from './learnngstyle/learnngstyle.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import { LikeComponent } from './like/like.component';
     FormatPipe,
     TextToBeFormatedComponent,
     PanelComponent,
-    LikeComponent
+    LikeComponent,
+    LearnNgif,
+    LearnngswitchcaseComponent,
+    LearnngforComponent,
+    LearnngstyleComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,9 @@
+<button
+      [style.backgroundColor]="canSave?'blue':'gray'"
+      [style.color]="canSave?'red':'blue'"
+      [style.fontWeight]="canSave?'bold':'normal'"
+      [ngStyle]={
+        'backgroundColor':canSave?'blue':'gray',
+        'color':canSave?'red':'blue',
+        'fontWeight':canSave?'bold':'normal'
+      }>SAVE</button>

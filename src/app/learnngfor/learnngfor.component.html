@@ -1,0 +1,11 @@
+<button (click)="onLoad()">LOAD</button>
+<button (click)="onAdd()">ADD</button>
+<ul *ngFor="let c of courses; index as i;trackBy:trackCourse">
+  <li>Id:{{c.id}} Name:{{c.name}} <button (click)="onRemove(i)">REMOVE</button></li>
+</ul>
+<!--
+<ol *ngFor="let c of courses; even as isEven">
+  <li *ngIf="isEven">{{c.name}}</li>
+
+</ol>
+-->
