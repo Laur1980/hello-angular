@@ -14,7 +14,7 @@ export class AppComponent {
 
   like={
     isLiked:true,
-    likeCount:2
+    likeCount:1
   };
 
   onChange( eventArgs:  FavoriteNewValue){

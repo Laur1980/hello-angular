@@ -24,13 +24,17 @@ export class LearnngforComponent implements OnInit {
   }
 
   onAdd(){
-    let index = this.courses.length-1;
-    let currentId = this.courses[index].id+1;
-    let currentName = 'course'+currentId;
-    this.courses.push({
-                        id:currentId,
-                        name:currentName
-                      });
+    if(this.courses != undefined){
+      let index = this.courses.length;
+      let currentId = index+1;
+      let currentName = 'course'+currentId;
+      this.courses.push({
+                          id:currentId,
+                          name:currentName
+                        });
+    }else{
+      this.courses=[{id:1,name:'course1'}];
+    }
   }
 
   onRemove(i:number){

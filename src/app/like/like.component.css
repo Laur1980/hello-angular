@@ -1,7 +1,9 @@
 .heart{
   color: #ccc;
+  cursor: pointer;
 }
 
 .heart-active {
   color: deeppink;
+  cursor: pointer;
 }
