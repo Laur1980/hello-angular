@@ -23,6 +23,7 @@ import { LearntraversalComponent } from './learntraversal/learntraversal.compone
 import { InputFormatDirective } from './input-format.directive';
 import { LearncustomdirectiveComponent } from './learncustomdirective/learncustomdirective.component';
 import { ZippyComponent } from './zippy/zippy.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { ZippyComponent } from './zippy/zippy.component';
     LearntraversalComponent,
     InputFormatDirective,
     LearncustomdirectiveComponent,
-    ZippyComponent
+    ZippyComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,

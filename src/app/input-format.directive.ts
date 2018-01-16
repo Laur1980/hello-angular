@@ -14,7 +14,7 @@ export class InputFormatDirective {
     let value: string = this.el.nativeElement.value;
     switch(this.format){
       case 'lowercase':this.el.nativeElement.value = value.toLowerCase();break;
-      default 'uppercase':this.el.nativeElement.value = value.toUpperCase();
+      case 'uppercase':this.el.nativeElement.value = value.toUpperCase();
     }
 
   }
