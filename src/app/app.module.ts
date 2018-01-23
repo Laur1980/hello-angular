@@ -24,6 +24,9 @@ import { InputFormatDirective } from './input-format.directive';
 import { LearncustomdirectiveComponent } from './learncustomdirective/learncustomdirective.component';
 import { ZippyComponent } from './zippy/zippy.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { UselessPipe } from './useless.pipe';
+import { ContactForm2Component } from './contact-form2/contact-form2.component';
+import { TemplateformassignmentComponent } from './templateformassignment/templateformassignment.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,10 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     InputFormatDirective,
     LearncustomdirectiveComponent,
     ZippyComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    UselessPipe,
+    ContactForm2Component,
+    TemplateformassignmentComponent
   ],
   imports: [
     BrowserModule,

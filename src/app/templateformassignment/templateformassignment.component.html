@@ -1,0 +1,19 @@
+<form #f="ngForm" (ngSubmit)="submit(f)">
+  <div class="form-group">
+    <label for="courseName">
+        <input type="text"
+               name="courseName"
+               ngModel #courseName="ngModel"
+               required
+               minlength="3"/>
+    </label>
+  </div>
+  <div class="alert alert-danger" *ngIf="courseName.touched && !courseName.valid">
+    <span class="courseName.errors.required">This is a mandatory field!</span>
+    <span class="courseName.errors.minlength">The field should be at least 4 characters!</span>
+  </div>
+  <div>
+  </div>
+  <p>{{ f.value | json }}</p>
+  <button class="btn btn-info">SUBMIT</button>
+</form>
