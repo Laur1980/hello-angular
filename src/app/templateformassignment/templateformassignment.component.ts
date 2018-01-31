@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormserviceService } from '../formservice.service';
 
 @Component({
   selector: 'templateformassignment',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateformassignmentComponent implements OnInit {
 
-  constructor() { }
+  coursesTypes;
+
+  constructor(service: FormserviceService) {
+    this.coursesTypes = service.getCoursesTypes();
+  }
 
   ngOnInit() {
   }

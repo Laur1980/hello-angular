@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CoursesComponent } from './course.component';
 import { CoursesService } from './courses.service';
@@ -27,6 +27,8 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import { UselessPipe } from './useless.pipe';
 import { ContactForm2Component } from './contact-form2/contact-form2.component';
 import { TemplateformassignmentComponent } from './templateformassignment/templateformassignment.component';
+import { FormserviceService } from './formservice.service';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -52,16 +54,19 @@ import { TemplateformassignmentComponent } from './templateformassignment/templa
     ContactFormComponent,
     UselessPipe,
     ContactForm2Component,
-    TemplateformassignmentComponent
+    TemplateformassignmentComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     CoursesService, // without this D.I. does not work
     RatingsService,
-    AuthorsService
+    AuthorsService,
+    FormserviceService
   ],
   bootstrap: [AppComponent]
 })

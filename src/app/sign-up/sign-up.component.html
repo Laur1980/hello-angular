@@ -1,0 +1,31 @@
+<form [formGroup]="form" >
+  <div class="form-group">
+    <label for="username">
+        Username
+    </label>
+    <input formControlName="username"
+           class="form-control"
+           type="text"
+           name="username"
+           required
+           minlength=""
+           maxlength=""
+           pattern=""/>
+           <div *ngIf="username.touched && username.invalid" class="alert alert-danger">
+                <span *ngIf="username.errors.required">Username required!</span>
+                <span *ngIf="username.errors.minlength">Username should be minimum {{ username.errors.minlength.requiredLength }} characters!</span>
+                <span *ngIf="username.errors.maxlength">Username should be a maximum of {{ username.errors.maxlength.requiredLength }} characters!</span>
+           </div>
+  </div>
+  <div class="form-group">
+    <label for="password">
+        Password
+    </label>
+    <input formControlName="password"
+           class="form-control"
+           type="password"
+           name="password"
+           required/>
+  </div>
+  <button class="btn btn-primary">Sign Up</button>
+</form>
