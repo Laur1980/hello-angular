@@ -29,6 +29,10 @@ import { ContactForm2Component } from './contact-form2/contact-form2.component';
 import { TemplateformassignmentComponent } from './templateformassignment/templateformassignment.component';
 import { FormserviceService } from './formservice.service';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { NewcourseformComponent } from './newcourseform/newcourseform.component';
+import { PostComponent } from './post/post.component';
+import { HttpModule } from '@angular/http';
+import { PostService } from './services/post.service';
 
 @NgModule({
   declarations: [
@@ -55,18 +59,22 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     UselessPipe,
     ContactForm2Component,
     TemplateformassignmentComponent,
-    SignUpComponent
+    SignUpComponent,
+    NewcourseformComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
   providers: [
     CoursesService, // without this D.I. does not work
     RatingsService,
     AuthorsService,
-    FormserviceService
+    FormserviceService,
+    PostService
   ],
   bootstrap: [AppComponent]
 })
