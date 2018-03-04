@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { PostService } from './services/post.service';
+import { PostService } from '../services/post.service';
+import { AppError } from '../common/app-error';
+import { NotFoundError } from '../common/not-found-error';
+import { AlreadyExistingError } from '../common/already-existing-error';
 
 @Component({
   selector: 'post',
@@ -11,42 +14,63 @@ export class PostComponent implements OnInit {
   posts:any[];
 
   constructor(private service: PostService) {
-    this.http = http;
   }
 
   createPost(input: HTMLInputElement){
-    let post = {title: input.value};
-    this.http.post(this.url,JSON.stringify(post))
+    let post = {id:input.id,title: input.value};
+    //this.http.post(this.url,JSON.stringify(post))\
+    this.service.createPost(post)
     .subscribe(response => {
       input.value='';
-      console.log(response.json());
-      post['id'] = response.json().id;
+      post['id'] = response.id;
       this.posts.splice(0,0,post);
+    }, (error: Response) =>{
+      if(error.status === 400){
+          //this.form.setErrors(error.json());
+        }else{
+          alert('An unexpected error occured!');
+        }
+
     });
 
   }
 
   updatePost(post){
     //this.http.put(this.url,post);
-    this.http.patch(this.url+'/'+post.id,JSON.stringify({isRead:true}))
+    //this.http.patch(this.url+'/'+post.id,JSON.stringify({isRead:true}))
+    this.service.updatePost(post)
         .subscribe(response => {
             console.log(response.json());
+        }, (error: Response) =>{
+          if(error.status === 404)
+            alert('An unexpected error occured!');
         });
   }
 
   deletePost(post){
-    this.http.delete(this.url+'/'+post.id)
+    //this.http.delete(this.url+'/'+post.id)
+    this.service.delete(post.id)
         .subscribe(response => {
           console.log(response.json());
           let index = this.posts.indexOf(post);
           this.posts.splice(index,1);
+        }, (error:Response) =>{
+          if(error instanceof NotFoundError){
+            alert('This post has already been deleted!');
+          }else{
+              alert('An unexpected error occured!');
+          }
+
         });
   }
 
   ngOnInit() {
-    this.http.get(this.url)
+    this.service.getPosts()
         .subscribe(response => {
           this.posts = response.json();
+        }, (error:Response) =>{
+          if(error instanceof Already)
+          alert('An unexpected error occured!');
         });
   }
 
